@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PostgreSQL Connector Configuration",
+  "description": "Schema for configuring PostgreSQL database connection.",
+  "type": "object",
+  "properties": {
+    "database": {
+      "type": "object",
+      "title": "Database Connection",
+      "description": "PostgreSQL database connection settings.",
+      "properties": {
+        "host": {
+          "type": "string",
+          "format": "hostname",
+          "description": "The database server hostname or IP address."
+        },
+        "port": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65535,
+          "default": 5432,
+          "description": "Port number for the PostgreSQL connection (default: 5432)."
+        },
+        "username": {
+          "type": "string",
+          "description": "Username for database authentication."
+        },
+        "password": {
+          "type": "string",
+          "description": "Password for database authentication.",
+          "format": "password"
+        },
+        "database_name": {
+          "type": "string",
+          "description": "The name of the database to connect to."
+        },
+        "ssl_enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable SSL connection to the database."
+        }
+      },
+      "required": ["host", "port", "username", "password", "database_name"]
+    },
+    "pooling": {
+      "type": "object",
+      "title": "Connection Pooling",
+      "description": "Settings for managing PostgreSQL connection pooling.",
+      "properties": {
+        "max_connections": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 10,
+          "description": "Maximum number of database connections in the pool."
+        },
+        "idle_timeout": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 300,
+          "description": "Idle timeout in seconds before a connection is closed."
+        },
+        "connection_lifetime": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 1800,
+          "description": "Maximum lifetime of a connection in seconds."
+        }
+      }
+    }
+  },
+  "required": ["database"]
+}

@@ -1,0 +1,217 @@
+#root {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Layout styles */
+.ant-layout {
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="light"] .ant-layout {
+  background: #f0f2f5;
+}
+
+[data-theme="dark"] .ant-layout {
+  background: #141414;
+}
+
+.ant-layout-content {
+  height: calc(100vh - 64px);
+  overflow: auto;
+}
+
+/* Card styles */
+.ant-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.ant-card-body {
+  flex: 1;
+  overflow: auto;
+  padding: 0 !important;
+}
+
+[data-theme="light"] .ant-card {
+  background: #ffffff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="dark"] .ant-card {
+  background: #1f1f1f;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Tabs styles */
+.ant-tabs {
+  height: 100%;
+}
+
+.ant-tabs-content {
+  height: calc(100% - 46px);
+  overflow: auto;
+}
+
+/* Form styles */
+.ant-form-item {
+  margin-bottom: 12px;
+}
+
+/* Preview form styles */
+.preview-form fieldset {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+.preview-form .ant-form-item-label {
+  font-weight: 500;
+}
+
+/* Collapse styles */
+.ant-collapse {
+  background: transparent !important;
+}
+
+.ant-collapse .ant-collapse-header {
+  align-items: center !important;
+  min-height: 48px;
+}
+
+[data-theme="light"] .ant-collapse-header {
+  background-color: #fafafa;
+}
+
+[data-theme="dark"] .ant-collapse-header {
+  background-color: #2a2a2a;
+}
+
+/* Code block styles */
+.code-block-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.code-block-container {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 100%;
+}
+
+[data-theme="light"] .code-block-container {
+  background: #f6f8fa;
+}
+
+[data-theme="dark"] .code-block-container {
+  background: #1a1a1a;
+}
+
+.copy-button {
+  position: absolute !important;
+  right: 8px !important;
+  top: 8px !important;
+  z-index: 2 !important;
+  opacity: 0;
+  transition: all 0.3s ease !important;
+}
+
+.code-block-container:hover .copy-button {
+  opacity: 1;
+}
+
+[data-theme="light"] .copy-button {
+  color: #000000d9 !important;
+  background: #fff !important;
+}
+
+[data-theme="dark"] .copy-button {
+  color: #ffffffd9 !important;
+  background: #1f1f1f !important;
+}
+
+.copy-button:hover {
+  background: var(--ant-primary-color) !important;
+  color: #fff !important;
+  transform: scale(1.05);
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Message styles */
+.custom-message {
+  margin-top: 64px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .custom-message {
+  background: #1f1f1f;
+  border: 1px solid #434343;
+}
+
+/* Transitions */
+.ant-switch,
+.ant-btn,
+.ant-input,
+.ant-input-number,
+.ant-select,
+.ant-collapse,
+.ant-tabs-tab {
+  transition: all 0.3s ease !important;
+}
+
+.border {
+  border: 1px solid #d9d9d9;
+}
+
+/* Fix button focus styles */
+.ant-btn:focus {
+  outline: none !important;
+}
+
+.ant-btn:focus-visible {
+  outline: 2px solid #d9363e !important;
+  outline-offset: 1px !important;
+}
+
+/* Make form items take full width */
+.ant-form-item {
+  width: 100% !important;
+}
+
+.ant-form-item .ant-form-item-control-input {
+  width: 100% !important;
+}
+
+.ant-form-item .ant-input-number,
+.ant-form-item .ant-select,
+.ant-form-item .ant-input,
+.ant-form-item .ant-input-textarea {
+  width: 100% !important;
+}
